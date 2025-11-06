@@ -1,0 +1,34 @@
+#VRML_SIM V8.5 utf8
+
+WorldInfo {
+  basicTimeStep 16
+}
+Viewpoint {
+  orientation -0.4 0.9 0 0.6
+  position 0 2 5
+}
+TexturedBackground { }
+TexturedBackgroundLight { }
+
+# Simple ground plane (built-in PROTO)
+Floor {
+  size 10 10
+}
+
+# A visible placeholder "drone body" you can replace later
+Solid {
+  translation 0 0.25 0
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 0.15 0.55 0.85
+        metalness 0
+        roughness 0.4
+      }
+      geometry Box { size 0.5 0.5 0.5 }
+    }
+  ]
+  name "harvesthawk_placeholder"
+  boundingObject Box { size 0.5 0.5 0.5 }
+  physics Physics { density -1 mass 2 }
+}
